@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <corners android:radius="25dp" /> <!-- Set your desired radius for all corners -->
+    <solid android:color="@android:color/transparent" /> <!-- Set your desired background color -->
+</shape>

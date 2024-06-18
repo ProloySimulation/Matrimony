@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="suggestedProfile"
+            type="com.kuhu.xosstech.data.UserProfile" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/parentLayoutSuggest"
+        android:layout_margin="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/demo_pic"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/imvProfileSuggestList"
+                    android:scaleType="centerCrop"
+                    tools:ignore="MissingConstraints" />
+
+                <LinearLayout
+                    android:layout_marginTop="-50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_one_login"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="200dp"
+                            android:elevation="10dp"
+                            app:cardBackgroundColor="#fcfcfc"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="10dp"
+                            app:cardPreventCornerOverlap="false"
+                            app:cardUseCompatPadding="true">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:textSize="16dp"
+                                        android:textColor="@color/black"
+                                        android:text="@{suggestedProfile.profileInfo.fullName}"/>
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="12dp"
+                                        android:textColor="@color/second_small_text_color"
+                                        android:text="@{suggestedProfile.occupationDetails.designation}"/>
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/first_small_text_color"
+                                        android:text="@{suggestedProfile.educationDetails.educationLevel}"/>
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/first_small_text_color"
+                                        android:text="@{suggestedProfile.profileInfo.district}"/>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp">
+
+                                        <androidx.appcompat.widget.AppCompatButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/btnSendRequest"
+                                            android:background="@drawable/transparent_button"
+                                            android:textColor="@{suggestedProfile.isButtonClicked ? @color/second_small_text_color : @color/primary}"
+                                            android:paddingStart="20dp"
+                                            android:paddingEnd="20dp"
+                                            android:paddingTop="10dp"
+                                            android:paddingBottom="10dp"
+                                            android:text="@string/send_interest"/>
+
+                                        <androidx.appcompat.widget.AppCompatButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/parentProfileChat"
+                                            android:background="@drawable/custom_main_button"
+                                            android:textColor="@color/white"
+                                            android:paddingStart="30dp"
+                                            android:paddingEnd="30dp"
+                                            android:paddingTop="10dp"
+                                            android:paddingBottom="10dp"
+                                            android:layout_alignParentEnd="true"
+                                            android:text="@string/chat_now"/>
+
+                                    </RelativeLayout>
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

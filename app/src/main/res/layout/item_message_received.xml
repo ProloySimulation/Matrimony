@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="onlineChat"
+            type="com.kuhu.xosstech.data.Message" />
+
+        <variable
+            name="viewModel"
+            type="com.kuhu.xosstech.viewmodel.ChatViewModel" />
+
+        <variable
+            name="userId"
+            type="int" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Your card view and message content here -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/chat_card_background"
+            android:backgroundTint="@color/chatColor"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp">
+
+            <!-- Your message content -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{onlineChat.messageContent}"
+                android:textColor="@color/white"
+                android:padding="10dp" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,36 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kuhu.xosstech.viewmodel.CustomDialogViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/a_confirmation_will_come_to_your_mobile"
+            android:textColor="@color/big_bold_text_color"
+            android:layout_marginBottom="20dp"/> <!-- Added margin to provide space for button -->
+
+        <Button
+            android:id="@+id/buttonOk"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.onOkButtonClick() }"
+            android:layout_gravity="center"
+            android:text="@string/ok"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
